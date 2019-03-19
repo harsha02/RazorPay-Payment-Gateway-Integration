@@ -1,0 +1,57 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+<title>Payment Gateway</title>
+
+</head>
+<body>
+	
+  <div class="container">
+  	<div class="row">
+  	<div class="col-sm-4">
+  	</div>
+  	<div class="col-sm-4 t">
+    <form action="/purchase" method="POST">
+ 	  <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="name" class="form-control" id="name" placeholder="Enter name" name="name" required>
+      </div>
+      <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+      </div>
+      <div class="form-group form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+      </label>
+      </div>
+    
+     <!-- Note that the amount is in paise = 50 INR -->
+      <script
+        src="https://checkout.razorpay.com/v1/checkout.js"
+        data-key="rzp_test_mZNzawpicVOX3V"
+        data-amount="5000"
+        data-buttontext="Pay with Razorpay"
+        data-name="Merchant Name"
+        data-description="Purchase Description"
+        data-image="https://your-awesome-site.com/your_logo.jpg"
+        data-prefill.name="Gaurav Kumar"
+        data-prefill.email="test@test.com"
+        data-theme.color="#F37254">
+     </script>
+     <input type="hidden" value="Hidden Element" name="hidden">
+    </form>
+</div>
+</div>
+</div>
+  	<div class="col-sm-4">
+  	</div>
+</body>
+</html>
